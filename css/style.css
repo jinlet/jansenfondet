@@ -1,0 +1,123 @@
+body {
+    margin: 30px;
+    margin-top: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url('../images/grainyimage.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/*TOP NAVBAR*/
+.header {
+    padding: 20px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.topbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+/*HOME SECTION*/
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home h1 {
+    font-size: 6rem;
+    letter-spacing: 20px;
+}
+
+/*WELCOME SECTION*/
+.welcome {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.welcome h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.welcome p {
+    font-size: 1.3rem; /* Font size for the paragraphs */
+    margin: 70px 0; /* Margin for spacing */
+    max-width: 600px; /* Set a max width to control line breaks */
+    line-height: 1.5; /* Adjust line height for readability */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+}
+
+.welcome .odd {
+    text-align: left; /* Align odd sentences to the left */
+    transform: translateX(-30px); /* Slightly move them to the left */
+}
+
+.welcome .even {
+    text-align: right; /* Align even sentences to the right */
+    transform: translateX(30px); /* Slightly move them to the right */
+}
+
+.info-link {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    transform: translateX(-230px);
+}
+
+.link-text {
+    font-size: 1.3rem;
+    text-decoration: underline;
+}
+
+.arrow {
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.info-link:hover .arrow {
+    transform: translateX(5px);
+}
+
+/*MER INFORMASJONSSIDE*/
+.info {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.info p {
+    font-size: 1.3rem; /* Font size for the paragraphs */
+    margin: 70px 0; /* Margin for spacing */
+    max-width: 600px; /* Set a max width to control line breaks */
+    line-height: 1.5; /* Adjust line height for readability */
+    margin-left: auto; /* Center align */
+    margin-right: auto; /* Center align */
+}
+
+ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
