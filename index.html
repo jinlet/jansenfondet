@@ -16,6 +16,9 @@
 
     <section class="home" id="home">
         <h1>Jansenfondet</h1>
+        <a href="#welcome" class="scroll-arrow">
+            <span class="material-icons arrow-down">expand_more</span>
+        </a>
     </section>
 
     <section class="welcome" id="welcome">
@@ -30,5 +33,71 @@
         </a>
 
     </section>
+
+    <section class="contact" id="contact">
+        <h2>Kontakt oss</h2>
+        <p>Postadresse: Helgesens gate 66B
+            0550 Oslo</p>
+        <p>E-post: henning@jansenfondet.no</p>
+    </section>
 </body>
+
+<script>
+    // Function to hide the arrow on scroll
+    window.addEventListener('scroll', function() {
+        const scrollArrow = document.querySelector('.scroll-arrow');
+        if (window.scrollY > 50) { // Adjust the scroll threshold as needed
+            scrollArrow.style.opacity = '0'; // Hide the arrow by setting opacity to 0
+            scrollArrow.style.pointerEvents = 'none'; // Prevent interaction when hidden
+        } else {
+            scrollArrow.style.opacity = '1'; // Show the arrow again when scrolling back up
+            scrollArrow.style.pointerEvents = 'auto'; // Enable interaction
+        }
+    });
+</script>
+
+<script>
+function checkVisibility() {
+    const welcomeSection = document.getElementById('welcome');
+    const oddParagraphs = welcomeSection.querySelectorAll('.odd');
+    const evenParagraphs = welcomeSection.querySelectorAll('.even');
+    const scrollY = window.scrollY || window.pageYOffset;
+    const offset = scrollY - welcomeSection.offsetTop;
+
+    // Adjust the factor to make it visible earlier
+    const visibilityThreshold = -1000; // Adjust this value to make them visible earlier
+    const opacityFactor = 0.003; // Adjust for opacity fade in
+
+    // Handle odd paragraphs
+    oddParagraphs.forEach((para, index) => {
+        const triggerPoint = visibilityThreshold + index * 300; // Adjust spacing for odd paragraphs
+        if (offset > triggerPoint) {
+            const translateValue = Math.min(-450 + (offset - triggerPoint) * 0.8, -50); // Move towards center
+            para.style.transform = `translateX(${translateValue}px)`; // Apply translation
+            para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
+        } else {
+            para.style.transform = `translateX(-100vw)`; // Reset position if not in view
+            para.style.opacity = 0; // Reset opacity if not in view
+        }
+    });
+
+    // Handle even paragraphs, with a delay after each odd paragraph
+    evenParagraphs.forEach((para, index) => {
+        const triggerPoint = visibilityThreshold + (index * 300 + 150); // Staggered trigger for even paragraphs
+        if (offset > triggerPoint) {
+            const translateValue = Math.max(450 - (offset - triggerPoint) * 0.8, 50); // Move towards center
+            para.style.transform = `translateX(${translateValue}px)`; // Apply translation
+            para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
+        } else {
+            para.style.transform = `translateX(100vw)`; // Reset position if not in view
+            para.style.opacity = 0; // Reset opacity if not in view
+        }
+    });
+}
+
+// Add a scroll event listener
+window.addEventListener('scroll', checkVisibility);
+checkVisibility();
+
+</script>
 </html>

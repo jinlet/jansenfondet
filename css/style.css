@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 30px;
     margin-top: 0;
@@ -42,6 +46,31 @@ body {
     letter-spacing: 20px;
 }
 
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px;
+    color: black;
+    transition: opacity 0.5s ease;
+}
+
+.material-icons.arrow-down {
+    font-size: 5rem;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); 
+    }
+    40% {
+        transform: translateY(10px); 
+    }
+    60% {
+        transform: translateY(5px);
+    }
+}
+
 /*WELCOME SECTION*/
 .welcome {
     padding: 40px 20px;
@@ -64,14 +93,17 @@ body {
 }
 
 .welcome .odd {
-    text-align: left; /* Align odd sentences to the left */
-    transform: translateX(-30px); /* Slightly move them to the left */
+    text-align: left;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
 }
 
 .welcome .even {
-    text-align: right; /* Align even sentences to the right */
-    transform: translateX(30px); /* Slightly move them to the right */
+    text-align: right;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
 }
+
 
 .info-link {
     display: inline-flex;
@@ -98,8 +130,13 @@ body {
 
 /*MER INFORMASJONSSIDE*/
 .info {
-    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     text-align: center;
+    height: 100vh;
 }
 
 .info h2 {
@@ -108,16 +145,108 @@ body {
     font-weight: 300;
 }
 
-.info p {
-    font-size: 1.3rem; /* Font size for the paragraphs */
-    margin: 70px 0; /* Margin for spacing */
-    max-width: 600px; /* Set a max width to control line breaks */
-    line-height: 1.5; /* Adjust line height for readability */
-    margin-left: auto; /* Center align */
-    margin-right: auto; /* Center align */
+.criteria-container {
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack boxes vertically */
+    align-items: center; /* Center align boxes */
+    gap: 40px; /* Space between boxes */
 }
 
-ul {
-    margin-left: 20px;
-    list-style-type: disc;
+.criterion-box {
+    border: 2px solid #e2c7c73f; /* Box border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 40px; /* Increased padding inside boxes */
+    width: 50%; /* Set a width to utilize available space */
+    max-width: 600px; /* Max width for boxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-size: 1.2rem; /* Font size for text */
+    transition: transform 0.3s ease; /* Transition effect on hover */
 }
+
+/* Alternating styles */
+.criterion-box.odd {
+    align-self: flex-start; /* Align odd boxes to the left */
+    transform: translateX(-20px); /* Slightly move left */
+}
+
+.criterion-box.even {
+    align-self: flex-end; /* Align even boxes to the right */
+    transform: translateX(20px); /* Slightly move right */
+}
+
+.criterion-box:hover {
+    transform: translateY(-5px);
+}
+
+.highlight {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.date-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 100px;
+}
+
+.date-item {
+    font-size: 1.1rem;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+    line-height: 1.3;
+}
+
+.info-text {
+    margin-top: 40px;
+    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 20px;
+    border: 3px solid #e2c7c73f;
+    border-radius: 18px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #cccccc;
+    padding: 8px 20px;
+    font-size: 1.3rem;
+    border-radius: 40px;
+    /*transition: all 0.3s ease;*/
+    
+}
+
+.button:hover {
+    /*transform: scale(1.05);*/
+}
+
+.info-message {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.4;
+}
+
+/*CONTACT*/
+.contact {
+    padding: 40px 20px;
+    padding-top: 200px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
