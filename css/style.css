@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    margin: 30px;
+    margin: 0;
     margin-top: 0;
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -20,6 +20,7 @@ body {
 
 /*TOP NAVBAR*/
 .header {
+    margin-left: 30px;
     padding: 20px;
     top: 0;
     position: fixed;
@@ -86,7 +87,7 @@ body {
 
 .welcome p {
     font-size: 1.3rem; /* Font size for the paragraphs */
-    margin: 70px 0; /* Margin for spacing */
+    margin: 120px 0; /* Margin for spacing */
     max-width: 600px; /* Set a max width to control line breaks */
     line-height: 1.5; /* Adjust line height for readability */
     margin-left: auto; /* Center align */
@@ -239,8 +240,12 @@ body {
 
 /*CONTACT*/
 .contact {
-    padding: 40px 20px;
-    padding-top: 200px;
+    width: 100vw !important;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 40px 0;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 150px;
     text-align: center;
 }
 
