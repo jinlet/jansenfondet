@@ -11,6 +11,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    overflow-x: hidden;
 }
 
 .hidden {
@@ -152,6 +153,10 @@ body {
     gap: 40px; /* Space between boxes */
 }
 
+.criteria-container p {
+    text-align: left;
+}
+
 .criterion-box {
     border: 2px solid #e2c7c73f; /* Box border */
     border-radius: 8px; /* Rounded corners */
@@ -250,3 +255,69 @@ body {
     margin: 10px 0;
 }
 
+/*TILDELINGER*/
+.tildelinger {
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.tildelinger h1 {
+    font-size: 3rem;
+    margin-bottom: 70px;
+    font-weight: 300;
+}
+
+.tildelinger-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.tildelinger-image {
+    flex: 1;
+    max-width: 30%;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 50px;
+}
+
+.tildelinger-text {
+    flex: 2;
+    line-height: 1.6;
+    width: 100%;
+}
+
+.tildelinger-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-align: left;
+}
+
+.tildelinger-text p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    text-align:left
+}
+
+.odd {
+    text-align: left;
+}
+
+.even {
+    text-align: right;
+    margin-left: 150px;
+}
+
+.tildelinger-text a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.tildelinger-text a:hover {
+    text-decoration: underline;
+}
