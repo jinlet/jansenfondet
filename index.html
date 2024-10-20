@@ -65,14 +65,14 @@ function checkVisibility() {
     const offset = scrollY - welcomeSection.offsetTop;
 
     // Adjust the factor to make it visible earlier
-    const visibilityThreshold = -1000; // Adjust this value to make them visible earlier
-    const opacityFactor = 0.003; // Adjust for opacity fade in
+    const visibilityThreshold = -300; // Adjust this value to make them visible earlier
+    const opacityFactor = 0.01; // Adjust for opacity fade in
 
     // Handle odd paragraphs
     oddParagraphs.forEach((para, index) => {
         const triggerPoint = visibilityThreshold + index * 300; // Adjust spacing for odd paragraphs
         if (offset > triggerPoint) {
-            const translateValue = Math.min(-450 + (offset - triggerPoint) * 0.8, -50); // Move towards center
+            const translateValue = Math.min(-450 + (offset - triggerPoint) * 2, -50); // Move towards center
             para.style.transform = `translateX(${translateValue}px)`; // Apply translation
             para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
         } else {
@@ -85,7 +85,7 @@ function checkVisibility() {
     evenParagraphs.forEach((para, index) => {
         const triggerPoint = visibilityThreshold + (index * 300 + 150); // Staggered trigger for even paragraphs
         if (offset > triggerPoint) {
-            const translateValue = Math.max(450 - (offset - triggerPoint) * 0.8, 50); // Move towards center
+            const translateValue = Math.max(450 - (offset - triggerPoint) * 2, 50); // Move towards center
             para.style.transform = `translateX(${translateValue}px)`; // Apply translation
             para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
         } else {
