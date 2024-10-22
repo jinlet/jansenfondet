@@ -59,15 +59,17 @@
                 <p class="even">Bidraget fra Jansenfondet vil bli brukt til å kjøpe inn poliklinisk utstyr til bruk på klinikken.</p>
             </div>
         </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <h2>Kontakt oss</h2>
-            <p>Postadresse: Helgesens gate 66B,
-                0550 Oslo</p>
-            <p>E-post: henning@jansenfondet.no</p>
-        </section>
     </section>
-    
+    <div id="contact-section-placeholder"></div>
+
 </body>
+
+<script>
+    fetch('contact.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('contact-section-placeholder').innerHTML = data;
+        })
+        .catch(error => console.log('Error loading contact section:', error));
+</script>
 </html>

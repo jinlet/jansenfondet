@@ -34,12 +34,9 @@
 
     </section>
 
-    <section class="contact" id="contact">
-        <h2>Kontakt oss</h2>
-        <p>Postadresse: Helgesens gate 66B
-            0550 Oslo</p>
-        <p>E-post: henning@jansenfondet.no</p>
-    </section>
+    <div id="contact-section-placeholder"></div>
+
+
 </body>
 
 <script>
@@ -65,14 +62,14 @@ function checkVisibility() {
     const offset = scrollY - welcomeSection.offsetTop;
 
     // Adjust the factor to make it visible earlier
-    const visibilityThreshold = -300; // Adjust this value to make them visible earlier
-    const opacityFactor = 0.01; // Adjust for opacity fade in
+    const visibilityThreshold = -700; // Adjust this value to make them visible earlier
+    const opacityFactor = 0.02; // Adjust for opacity fade in
 
     // Handle odd paragraphs
     oddParagraphs.forEach((para, index) => {
         const triggerPoint = visibilityThreshold + index * 300; // Adjust spacing for odd paragraphs
         if (offset > triggerPoint) {
-            const translateValue = Math.min(-450 + (offset - triggerPoint) * 2, -50); // Move towards center
+            const translateValue = Math.min(-400 + (offset - triggerPoint) * 2, -50); // Move towards center
             para.style.transform = `translateX(${translateValue}px)`; // Apply translation
             para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
         } else {
@@ -85,7 +82,7 @@ function checkVisibility() {
     evenParagraphs.forEach((para, index) => {
         const triggerPoint = visibilityThreshold + (index * 300 + 150); // Staggered trigger for even paragraphs
         if (offset > triggerPoint) {
-            const translateValue = Math.max(450 - (offset - triggerPoint) * 2, 50); // Move towards center
+            const translateValue = Math.max(400 - (offset - triggerPoint) * 2, 50); // Move towards center
             para.style.transform = `translateX(${translateValue}px)`; // Apply translation
             para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
         } else {
@@ -99,5 +96,14 @@ function checkVisibility() {
 window.addEventListener('scroll', checkVisibility);
 checkVisibility();
 
+</script>
+
+<script>
+    fetch('contact.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('contact-section-placeholder').innerHTML = data;
+        })
+        .catch(error => console.log('Error loading contact section:', error));
 </script>
 </html>
