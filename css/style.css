@@ -259,6 +259,7 @@ body {
 
 .rows {
     display: flex;
+    justify-content: center;
 }
 
 .contact .contact-form {
