@@ -158,46 +158,27 @@ body {
     font-weight: 300;
 }
 
-.criteria-container {
-    display: flex; /* Use flex layout */
-    flex-direction: column; /* Stack boxes vertically */
-    align-items: center; /* Center align boxes */
-    gap: 40px; /* Space between boxes */
+.criteria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    width: 100%;
 }
 
-.criteria-container p {
-    text-align: left;
-}
 
-.criterion-box {
-    border: 2px solid #e2c7c73f; /* Box border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 40px; /* Increased padding inside boxes */
-    width: 50%; /* Set a width to utilize available space */
-    max-width: 600px; /* Max width for boxes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    font-size: 1.2rem; /* Font size for text */
-    transition: transform 0.3s ease; /* Transition effect on hover */
-}
-
-/* Alternating styles */
-.criterion-box.odd {
-    align-self: flex-start; /* Align odd boxes to the left */
-    transform: translateX(-20px); /* Slightly move left */
-}
-
-.criterion-box.even {
-    align-self: flex-end; /* Align even boxes to the right */
-    transform: translateX(20px); /* Slightly move right */
-}
-
-.criterion-box:hover {
-    transform: translateY(-5px);
+.criterion {
+    padding: 20px;
+    border: 1px solid #e2c7c7;
+    border-radius: 8px;
+    background: #dda53b2f;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
 }
 
 .highlight {
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .date-container {
@@ -216,7 +197,7 @@ body {
 
 .info-text {
     margin-top: 40px;
-    max-width: 800px;
+    max-width: 700px;
     font-size: 1.2rem;
     line-height: 1.5;
     padding: 20px;
@@ -400,4 +381,73 @@ textarea.form-control {
 }
 .tildelinger-text a:hover {
     text-decoration: underline;
+}
+
+/*RESPONSIVE FOR TABLET AND MOBILE*/
+/* Responsive for Header */
+@media (max-width: 768px) {
+    .topbar a {
+        font-size: 18px;
+    }
+}
+
+/* Responsive for Home Section */
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 3rem;
+        letter-spacing: 5px;
+    }
+}
+
+/* Responsive for Welcome Section */
+@media (max-width: 768px) {
+    .welcome h2 {
+        font-size: 2rem;
+    }
+
+    .welcome p {
+        font-size: 1rem;
+        margin: 40px 0;
+    }
+}
+
+/* Responsive for Contact Section */
+@media (max-width: 768px) {
+    .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .contact .contact-form {
+        width: 100%;
+    }
+
+    .form-control {
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive for Tildelinger Section */
+@media (min-width: 768px) {
+    .tildelinger-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .tildelinger-image {
+        max-width: 30%;
+        margin-right: 30px;
+    }
+}
+
+/* General Responsive Styles */
+@media (max-width: 768px) {
+    .date-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .button-container .button {
+        font-size: 1rem;
+    }
 }

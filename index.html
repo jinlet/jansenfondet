@@ -44,60 +44,58 @@
     // Function to hide the arrow on scroll
     window.addEventListener('scroll', function() {
         const scrollArrow = document.querySelector('.scroll-arrow');
-        if (window.scrollY > 50) { // Adjust the scroll threshold as needed
-            scrollArrow.style.opacity = '0'; // Hide the arrow by setting opacity to 0
-            scrollArrow.style.pointerEvents = 'none'; // Prevent interaction when hidden
+        const threshold = window.innerHeight * 0.1; // Responsive threshold based on screen height
+
+        if (window.scrollY > threshold) {
+            scrollArrow.style.opacity = '0';
+            scrollArrow.style.pointerEvents = 'none';
         } else {
-            scrollArrow.style.opacity = '1'; // Show the arrow again when scrolling back up
-            scrollArrow.style.pointerEvents = 'auto'; // Enable interaction
+            scrollArrow.style.opacity = '1';
+            scrollArrow.style.pointerEvents = 'auto';
         }
     });
 </script>
 
 <script>
-function checkVisibility() {
-    const welcomeSection = document.getElementById('welcome');
-    const oddParagraphs = welcomeSection.querySelectorAll('.odd');
-    const evenParagraphs = welcomeSection.querySelectorAll('.even');
+    function checkVisibility() {
+        const welcomeSection = document.getElementById('welcome');
+        const oddParagraphs = welcomeSection.querySelectorAll('.odd');
+        const evenParagraphs = welcomeSection.querySelectorAll('.even');
 
-    const scrollY = window.scrollY || window.pageYOffset;
-    const offset = scrollY - welcomeSection.offsetTop;
+        const scrollY = window.scrollY || window.pageYOffset;
+        const offset = scrollY - welcomeSection.offsetTop;
 
-    // Adjust the factor to make it visible earlier
-    const visibilityThreshold = -700; // Adjust this value to make them visible earlier
-    const opacityFactor = 0.02; // Adjust for opacity fade in
+        // Adjust thresholds and factors based on screen width
+        const baseThreshold = window.innerWidth < 768 ? -400 : -700; // Less distance for smaller screens
+        const opacityFactor = window.innerWidth < 768 ? 0.04 : 0.02; // Faster fade-in on smaller screens
 
-    // Handle odd paragraphs
-    oddParagraphs.forEach((para, index) => {
-        const triggerPoint = visibilityThreshold + index * 300; // Adjust spacing for odd paragraphs
-        if (offset > triggerPoint) {
-            const translateValue = Math.min(-400 + (offset - triggerPoint) * 2, -50); // Move towards center
-            para.style.transform = `translateX(0)`; // Apply translation
-            para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
-        } else {
-            para.style.transform = `translateX(-100vw)`; // Reset position if not in view
-            para.style.opacity = 0; // Reset opacity if not in view
-        }
-    });
+        // Handle odd paragraphs
+        oddParagraphs.forEach((para, index) => {
+            const triggerPoint = baseThreshold + index * 300;
+            if (offset > triggerPoint) {
+                para.style.transform = `translateX(0)`;
+                para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor);
+            } else {
+                para.style.transform = `translateX(-100vw)`;
+                para.style.opacity = 0;
+            }
+        });
 
-    // Handle even paragraphs, with a delay after each odd paragraph
-    evenParagraphs.forEach((para, index) => {
-        const triggerPoint = visibilityThreshold + (index * 300 + 150); // Staggered trigger for even paragraphs
-        if (offset > triggerPoint) {
-            const translateValue = Math.max(400 - (offset - triggerPoint) * 2, 5); // Move towards center
-            para.style.transform = `translateX(0)`; // Apply translation
-            para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
-        } else {
-            para.style.transform = `translateX(100vw)`; // Reset position if not in view
-            para.style.opacity = 0; // Reset opacity if not in view
-        }
-    });
-}
+        // Handle even paragraphs, with a staggered delay for each
+        evenParagraphs.forEach((para, index) => {
+            const triggerPoint = baseThreshold + (index * 300 + 150);
+            if (offset > triggerPoint) {
+                para.style.transform = `translateX(0)`;
+                para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor);
+            } else {
+                para.style.transform = `translateX(100vw)`;
+                para.style.opacity = 0;
+            }
+        });
+    }
 
-// Add a scroll event listener
-window.addEventListener('scroll', checkVisibility);
-checkVisibility();
-
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
 </script>
 
 <script>
