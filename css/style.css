@@ -6,7 +6,10 @@ body {
     margin: 0;
     margin-top: 0;
     padding: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5C5753  ;
     background-image: url('../images/grainyimage.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -29,7 +32,7 @@ body {
 }
 
 .topbar a {
-    color: black;
+    color: #5C5753;
     text-decoration: none;
     font-size: 20px;
     letter-spacing: 3px;
@@ -94,15 +97,24 @@ body {
     margin-right: auto; /* Center align */
 }
 
+.welcome p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.welcome p a:hover {
+    opacity: 0.7;
+}
+
 .welcome .odd {
     text-align: left;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
     opacity: 0;
 }
 
 .welcome .even {
     text-align: right;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
     opacity: 0;
 }
 
@@ -111,7 +123,7 @@ body {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    color: black;
+    color: #5C5753;
     text-decoration: none;
     transform: translateX(-230px);
 }
@@ -304,6 +316,7 @@ textarea.form-control {
 }
 
 .btn {
+    color: #5C5753;
     font-size: 16px;
     font-weight: 600;
     border-radius: 25px;
@@ -381,7 +394,7 @@ textarea.form-control {
 }
 
 .tildelinger-text a {
-    color: black;
+    color: #5C5753;
     text-decoration: none;
     font-weight: bold;
 }

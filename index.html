@@ -25,8 +25,9 @@
         <h2>Velkommen til Jansenfondet</h2>
         <p class="odd">Jansenfondet er et natur og dyrevernfond som hvert år deler ut 50.000 kroner til aktører innenfor natur og dyrevern i Norge.</p>
         <p class="even">Vi prioriterer lokale lag, foreninger og eventuelt enkeltpersoner som jobber målbevisst med natur og/eller dyrevern.</p>
-        <p class="odd">Er du/dere innenfor målgruppen og ønsker å søke, så kan du/dere bruke vårt søknadsskjema.</p>
-        <p class="even">Det er mulig for mottaker av stipendet å søke flere år på rad, men i utgangspunktet prioriterer vi å støtte forskjellige tiltak.</p>
+        <p class="odd">Jansenfondet finansieres av Kamerado <a href="https://kamerado.no/" target="_blank">(Kamerado.no)</a>.</p>
+        <p class="even">Er du/dere innenfor målgruppen og ønsker å søke, så kan du/dere bruke vårt søknadsskjema.</p>
+        <p class="odd">Det er mulig for mottaker av stipendet å søke flere år på rad, men i utgangspunktet prioriterer vi å støtte forskjellige tiltak.</p>
         <a href="info.html" class="info-link">
             <span class="link-text">Mer informasjon</span>
             <span class="material-icons arrow">east</span>
@@ -58,6 +59,7 @@ function checkVisibility() {
     const welcomeSection = document.getElementById('welcome');
     const oddParagraphs = welcomeSection.querySelectorAll('.odd');
     const evenParagraphs = welcomeSection.querySelectorAll('.even');
+
     const scrollY = window.scrollY || window.pageYOffset;
     const offset = scrollY - welcomeSection.offsetTop;
 
@@ -70,7 +72,7 @@ function checkVisibility() {
         const triggerPoint = visibilityThreshold + index * 300; // Adjust spacing for odd paragraphs
         if (offset > triggerPoint) {
             const translateValue = Math.min(-400 + (offset - triggerPoint) * 2, -50); // Move towards center
-            para.style.transform = `translateX(${translateValue}px)`; // Apply translation
+            para.style.transform = `translateX(0)`; // Apply translation
             para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
         } else {
             para.style.transform = `translateX(-100vw)`; // Reset position if not in view
@@ -82,8 +84,8 @@ function checkVisibility() {
     evenParagraphs.forEach((para, index) => {
         const triggerPoint = visibilityThreshold + (index * 300 + 150); // Staggered trigger for even paragraphs
         if (offset > triggerPoint) {
-            const translateValue = Math.max(400 - (offset - triggerPoint) * 2, 50); // Move towards center
-            para.style.transform = `translateX(${translateValue}px)`; // Apply translation
+            const translateValue = Math.max(400 - (offset - triggerPoint) * 2, 5); // Move towards center
+            para.style.transform = `translateX(0)`; // Apply translation
             para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor); // Gradually show
         } else {
             para.style.transform = `translateX(100vw)`; // Reset position if not in view
