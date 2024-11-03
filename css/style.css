@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -449,5 +450,11 @@ textarea.form-control {
     
     .button-container .button {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-link {
+        transform: none;
     }
 }

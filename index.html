@@ -64,15 +64,19 @@
 
         const scrollY = window.scrollY || window.pageYOffset;
         const offset = scrollY - welcomeSection.offsetTop;
+        const viewportHeight = window.innerHeight;
+        const sectionHeight = welcomeSection.offsetHeight;
 
-        // Adjust thresholds and factors based on screen width
-        const baseThreshold = window.innerWidth < 768 ? -400 : -700; // Less distance for smaller screens
-        const opacityFactor = window.innerWidth < 768 ? 0.04 : 0.02; // Faster fade-in on smaller screens
+        // Dynamic thresholds for smaller screens
+        const baseThreshold = window.innerWidth < 768 ? -viewportHeight * 0.5 : -700;
+        const opacityFactor = window.innerWidth < 768 ? 0.04 : 0.02;
 
         // Handle odd paragraphs
         oddParagraphs.forEach((para, index) => {
             const triggerPoint = baseThreshold + index * 300;
-            if (offset > triggerPoint) {
+            const atBottom = scrollY + viewportHeight >= document.body.offsetHeight;
+            
+            if (offset > triggerPoint || atBottom) {
                 para.style.transform = `translateX(0)`;
                 para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor);
             } else {
@@ -81,10 +85,12 @@
             }
         });
 
-        // Handle even paragraphs, with a staggered delay for each
+        // Handle even paragraphs with staggered delays
         evenParagraphs.forEach((para, index) => {
             const triggerPoint = baseThreshold + (index * 300 + 150);
-            if (offset > triggerPoint) {
+            const atBottom = scrollY + viewportHeight >= document.body.offsetHeight;
+            
+            if (offset > triggerPoint || atBottom) {
                 para.style.transform = `translateX(0)`;
                 para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor);
             } else {
@@ -96,6 +102,7 @@
 
     window.addEventListener('scroll', checkVisibility);
     checkVisibility();
+
 </script>
 
 <script>
