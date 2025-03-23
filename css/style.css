@@ -151,6 +151,9 @@ body {
     align-items: center;
     padding: 20px;
     text-align: center;
+    border-bottom: 2px solid #dda53b2f;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .info h2 {
@@ -170,7 +173,7 @@ body {
 
 .criterion {
     padding: 20px;
-    border: 1px solid #e2c7c7;
+    border: 1px solid #cfac84;
     border-radius: 8px;
     background: #dda53b2f;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -336,6 +339,8 @@ textarea.form-control {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 20px;
+    padding-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .tildelinger-image {
@@ -344,6 +349,7 @@ textarea.form-control {
     height: auto;
     border-radius: 8px;
     margin-right: 50px;
+    align-self: center;
 }
 
 .tildelinger-text {
@@ -382,6 +388,25 @@ textarea.form-control {
 }
 .tildelinger-text a:hover {
     text-decoration: underline;
+}
+
+.reverse .tildelinger-image{
+    margin-left: 50px;
+    margin-right: 0;
+}
+
+.reverse .tildelinger-text {
+    text-align: right;
+}
+
+.reverse .odd {
+    text-align: left;
+}
+
+.reverse .even {
+    text-align: right;
+    margin-left: 150px;
+    margin-right: 50px;
 }
 
 /*RESPONSIVE FOR TABLET AND MOBILE*/
@@ -429,15 +454,14 @@ textarea.form-control {
 }
 
 /* Responsive for Tildelinger Section */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .tildelinger-container {
         flex-direction: row;
         align-items: flex-start;
     }
 
     .tildelinger-image {
-        max-width: 30%;
-        margin-right: 30px;
+        display: none;
     }
 }
 
