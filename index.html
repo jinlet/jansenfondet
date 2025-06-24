@@ -20,6 +20,18 @@
                 <a href="#soknadskriterier" class="nav-button">Søknadskriterier</a>
                 <a href="#tidligere-mottagere" class="nav-button">Tidligere mottagere</a>
             </nav>
+
+            <!-- Hamburger for mobile -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+
+            <!-- Side Navigation Drawer -->
+            <div class="side-nav" id="sideNav">
+            <a href="#hjem" class="nav-button">Hjem</a>
+            <a href="#soknadskriterier" class="nav-button">Søknadskriterier</a>
+            <a href="#tidligere-mottagere" class="nav-button">Tidligere mottagere</a>
+            </div>
         </div>
     </header>
 
@@ -102,23 +114,43 @@
         </div>
     </section>
 
-    <!-- <section class="welcome" id="welcome">
-        <h2>Velkommen til Jansenfondet</h2>
-        <p class="">Jansenfondet er et natur og dyrevernfond som hvert år deler ut 50.000 kroner til aktører innenfor natur og dyrevern i Norge.</p>
-        <p class="">Vi prioriterer lokale lag, foreninger og eventuelt enkeltpersoner som jobber målbevisst med natur og/eller dyrevern.</p>
-        <p class="">Jansenfondet finansieres av Kamerado <a href="https://kamerado.no/" target="_blank">(Kamerado.no)</a>.</p>
-        <p class="">Er du/dere innenfor målgruppen og ønsker å søke, så kan du/dere bruke vårt søknadsskjema.</p>
-        <p class="">Det er mulig for mottaker av stipendet å søke flere år på rad, men i utgangspunktet prioriterer vi å støtte forskjellige tiltak.</p>
-        <a href="info.html" class="info-link">
-            <span class="link-text">Mer informasjon</span>
-            <span class="material-icons arrow">east</span>
-        </a>
-
-    </section> -->
-
     <div id="contact-section-placeholder"></div>
 
     <script src="scripts/script.js"></script>
+
+    <script>
+    const hamburger = document.getElementById("hamburger");
+    const sideNav = document.getElementById("sideNav");
+
+    hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        sideNav.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+  // If nav is open and click target is NOT inside sideNav or hamburger
+    if (
+        sideNav.classList.contains("open") &&
+        !sideNav.contains(e.target) &&
+        e.target !== hamburger
+    ) {
+        sideNav.classList.remove("open");
+    }
+    });
+
+    // Optional: close nav on link click
+    document.querySelectorAll(".side-nav a").forEach(link => {
+        link.addEventListener("click", () => {
+        sideNav.classList.remove("open");
+        });
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) {
+            sideNav.classList.remove("open");
+        }
+    });
+    </script>
 </body>
 
 <script>
@@ -137,54 +169,6 @@
     });
 </script>
 
-<script>
-    function checkVisibility() {
-        const welcomeSection = document.getElementById('welcome');
-        const oddParagraphs = welcomeSection.querySelectorAll('.odd');
-        const evenParagraphs = welcomeSection.querySelectorAll('.even');
-
-        const scrollY = window.scrollY || window.pageYOffset;
-        const offset = scrollY - welcomeSection.offsetTop;
-        const viewportHeight = window.innerHeight;
-        const sectionHeight = welcomeSection.offsetHeight;
-
-        // Dynamic thresholds for smaller screens
-        const baseThreshold = window.innerWidth < 768 ? -viewportHeight * 0.5 : -700;
-        const opacityFactor = window.innerWidth < 768 ? 0.04 : 0.02;
-
-        // Handle odd paragraphs
-        oddParagraphs.forEach((para, index) => {
-            const triggerPoint = baseThreshold + index * 300;
-            const atBottom = scrollY + viewportHeight >= document.body.offsetHeight;
-            
-            if (offset > triggerPoint || atBottom) {
-                para.style.transform = `translateX(0)`;
-                para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor);
-            } else {
-                para.style.transform = `translateX(-100vw)`;
-                para.style.opacity = 0;
-            }
-        });
-
-        // Handle even paragraphs with staggered delays
-        evenParagraphs.forEach((para, index) => {
-            const triggerPoint = baseThreshold + (index * 300 + 150);
-            const atBottom = scrollY + viewportHeight >= document.body.offsetHeight;
-            
-            if (offset > triggerPoint || atBottom) {
-                para.style.transform = `translateX(0)`;
-                para.style.opacity = Math.min(1, (offset - triggerPoint) * opacityFactor);
-            } else {
-                para.style.transform = `translateX(100vw)`;
-                para.style.opacity = 0;
-            }
-        });
-    }
-
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility();
-
-</script>
 
 <script>
     fetch('contact.html')
