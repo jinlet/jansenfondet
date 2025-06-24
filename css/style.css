@@ -148,7 +148,7 @@ nav {
 }
 
 .home-text h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     letter-spacing: 10px;
     color: #3a7444;
 }
@@ -548,15 +548,6 @@ textarea.form-control {
     font-size: 1.3rem;
     margin-bottom: 40px;
     text-align:left
-}
-
-.odd {
-    text-align: left;
-}
-
-.even {
-    text-align: right;
-    margin-left: 150px;
 }
 
 .tildelinger-text a {
