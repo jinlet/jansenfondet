@@ -98,10 +98,10 @@ nav {
     display: flex;
     position: fixed;
     top: 0;
-    right: -250px;
-    width: 250px;
+    right: -200px;
+    width: 200px;
     height: 100vh;
-    background: rgba(156, 113, 56, 0.2); /* Black with 70% opacity */
+    background: rgba(238, 231, 221, 0.945); /* Black with 70% opacity */
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     padding: 60px 20px;
     flex-direction: column;
@@ -113,6 +113,7 @@ nav {
     z-index: 1001;
     opacity: 0;
     pointer-events: none;
+    color: white;
 }
 
 .side-nav.open {
@@ -263,7 +264,7 @@ nav {
 
     .home-text h1 {
         font-size: 2.8rem;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         text-align: center;
     }
 
@@ -271,7 +272,7 @@ nav {
         font-size: 1.15rem;
         margin: 20px 0;
         text-align: left;
-        line-height: 1.6;
+        line-height: 1.2;
     }
 
     .button {
@@ -559,31 +560,17 @@ nav {
 
 /*RESPONSIVE FOR TABLET AND MOBILE*/
 /* Responsive for Header */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .topbar a {
-        font-size: 18px;
+        font-size: 14px;
+    }
+    .topbar .logo {
+        width: 30px;
+        height: auto;
     }
 }
 
-/* Responsive for Home Section */
-@media (max-width: 768px) {
-    .home h1 {
-        font-size: 3rem;
-        letter-spacing: 5px;
-    }
-}
 
-/* Responsive for Welcome Section */
-@media (max-width: 768px) {
-    .welcome h2 {
-        font-size: 2rem;
-    }
-
-    .welcome p {
-        font-size: 1rem;
-        margin: 40px 0;
-    }
-}
 
 /* Responsive for Contact Section */
 @media (max-width: 768px) {
@@ -610,23 +597,5 @@ nav {
 
     .tildelinger-image {
         display: none;
-    }
-}
-
-/* General Responsive Styles */
-@media (max-width: 768px) {
-    .date-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .button-container .button {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .info-link {
-        transform: none;
     }
 }
