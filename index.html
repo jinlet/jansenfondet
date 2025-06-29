@@ -105,10 +105,16 @@
                             <img src="images/lerud-kattepensjonat.jpg" alt="Tildeling" class="tildeling-image">
                             <h3 class="name">Lerud Kattepensjonat</h3>
                             <i class="tildeling-info">Mottaker av Jansenfondet i 2024 er <a href="https://www.lerud.no/" target="_blank">Lerud Kattepensjonat</a>.
-                                Lerud Kattepensjonat ligger på Lerud gård i Romedal. Det ble åpnet 6. April 2017 og har fra første dag hatt høyt fokus på kattenes velvære. Stedet er bygget for å dekke katters behov mens eier er bortreist. Kattene får eget romslig bur med stor gulvflate og full takhøyde. Det er også fellesrom, luftegård og TV-krok tilgjengelig for kattene.
-                            Pensjonatet er utstyrt med egen sykeavdeling og samarbeider med flere veterinærer. Takket være den gode kvaliteten som pensjonatet opprettholder har katteeiere fra fjerne strøk som Kristiansand, Trondheim og helt fra Sverige tatt reisen dit for å sørge for at kjæledyrene deres har det så bra som mulig.
+                                Lerud Kattepensjonat ligger på Lerud gård i Romedal. Det ble åpnet 6. April 2017 og har fra første dag hatt høyt fokus på kattenes velvære. Stedet er bygget for å dekke katters behov mens eier er bortreist. 
+                            
+                            <span id="moreText" style="display: none;">
+                                Kattene får eget romslig bur med stor gulvflate og full takhøyde. Det er også fellesrom, luftegård og TV-krok tilgjengelig for kattene.
+                            Pensjonatet er utstyrt med egen sykeavdeling og samarbeider med flere veterinærer. 
+                            Takket være den gode kvaliteten som pensjonatet opprettholder har katteeiere fra fjerne strøk som Kristiansand, Trondheim og helt fra Sverige tatt reisen dit for å sørge for at kjæledyrene deres har det så bra som mulig.
                             Eierne av pensjonatet er mennesker med stort engasjement for dyrevelferd, og er aktivt involvert i kampen om å få forandret Norges nåværende regelverk knyttet opp mot dyrehold i bur. Målet er å øke minstekravet på størrelsen av dyrebur for å sikre bedre dyrehold.
                             De tildelte midlene til Lerud Kattepensjonat fra Jansenfondet ble brukt til å legge inn nye vannrør i pensjonatet.
+                            </span>
+                            <button class="les-mer-button" onclick="toggleMoreText(this)">Les mer...</button>
                             </i>
                         </li>
                         <li class="tildelinger swiper-slide">
@@ -116,8 +122,11 @@
                             <h3 class="name">Lisaklinikken</h3>
                             <i class="tildeling-info">Mottaker av Jansenfondet i 2023 er <a href="https://www.dyrebeskyttelsen.no/lisaklinikken/" target="_blank">Lisaklinikken</a>.
                                 Lisaklinikken er Norges første gratis veterinærklinikk for dyr av eiere som av ulike grunner ikke kan betale for veterinærbehandling. Klinikken er oppkalt etter Norges første kvinnelige dyreverner – Lisa Kristoffersen – som stiftet foreningen «Dyrevernelaget» i 1907.
-                                Klinikken ligger i Toftes gate 68a på Grunerløkka i Oslo og tilbyr alt fra alminnelig helsesjekk og kloklipp til tannbehandling og operasjoner.
-                                Bidraget fra Jansenfondet vil bli brukt til å kjøpe inn poliklinisk utstyr til bruk på klinikken.
+                                
+                            <span id="moreText" style="display: none;">Klinikken ligger i Toftes gate 68a på Grunerløkka i Oslo og tilbyr alt fra alminnelig helsesjekk og kloklipp til tannbehandling og operasjoner.
+                            Bidraget fra Jansenfondet vil bli brukt til å kjøpe inn poliklinisk utstyr til bruk på klinikken.
+                            </span>
+                            <button class="les-mer-button" onclick="toggleMoreText(this)">Les mer...</button>
                             </i>
                         </li>
                     </ul>
@@ -220,5 +229,19 @@
             document.getElementById('contact-section-placeholder').innerHTML = data;
         })
         .catch(error => console.log('Error loading contact section:', error));
+</script>
+
+<!-- To toggle Les mer -->
+<script>
+    function toggleMoreText(button) {
+        const moreText = button.previousElementSibling;
+        if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        button.textContent = "Les mindre";
+        } else {
+        moreText.style.display = "none";
+        button.textContent = "Les mer...";
+        }
+    }
 </script>
 </html>

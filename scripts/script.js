@@ -16,7 +16,7 @@ window.addEventListener('scroll', function () {
 });
 
 const swiper = new Swiper('.slider-wrapper', {
-    loop: false,
+    loop: true,
     grabCursor: true,
     spaceBetween: 0,
     centeredSlides: false,

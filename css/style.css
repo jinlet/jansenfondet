@@ -505,6 +505,7 @@ nav {
 }
 
 .tildelinger-section .tildelinger {
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -526,7 +527,7 @@ nav {
 .tildelinger-section .tildeling-info {
     line-height: 25px;
     max-width: 900px;
-    padding: 0 20px 10px 20px;
+    padding: 0 20px 20px 20px;
     font-size: 1.2rem;
 }
 
@@ -555,6 +556,34 @@ nav {
 .tildelinger-section .swiper-slide-button:hover {
     color: #223625;
 }
+
+.les-mer-button {
+    background: none;
+    border: none;
+    color: #3a7444;
+    cursor: pointer;
+    font-weight: bold;
+    padding-left: 5px;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+.les-mer-button:hover {
+    opacity: 0.8;
+}
+
+.swiper-slide {
+    width: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
 
 @media (max-width: 900px) {
     .tildelinger-section {
@@ -587,10 +616,6 @@ nav {
     .tildelinger-section .slider-wrapper {
         width: 100%;
         margin: 0 0 30px;
-    }
-
-    .tildelinger-section .swiper-slide-button {
-        display: none;
     }
 
     .swiper-slide {
@@ -637,14 +662,3 @@ nav {
     }
 }
 
-/* Responsive for Tildelinger Section */
-@media (max-width: 768px) {
-    .tildelinger-container {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .tildelinger-image {
-        display: none;
-    }
-}
