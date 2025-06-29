@@ -493,6 +493,12 @@ nav {
     text-align: center;
 }
 
+.tildelinger-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tildelinger-section h2 {
     font-size: 3.5rem;
     letter-spacing: 8px;
@@ -503,7 +509,6 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-left: -50px;
 }
 
 .tildelinger-section .tildelinger .tildeling-image {
@@ -521,7 +526,17 @@ nav {
 .tildelinger-section .tildeling-info {
     line-height: 25px;
     max-width: 900px;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 10px 20px;
+    font-size: 1.2rem;
+}
+
+.tildeling-info a {
+    color: #3a7444;
+    text-decoration: none;
+}
+
+.tildeling-info a:hover {
+    opacity: 0.7;
 }
 
 .tildelinger-section .swiper-pagination-bullet {
@@ -555,11 +570,11 @@ nav {
         padding: 25px 15px;
         max-width: 100%;
     }
-    .tildelinger-section .testimonial .user-image {
-        width: 200px;
-        height: 200px;
+    .tildelinger-section .tildelinger .tildeling-image {
+        width: 180px;
+        height: 180px;
     }
-    .tildeling-info {
+    .tildelinger-section .tildeling-info {
     font-size: 1rem;
     line-height: 1.5;
     text-align: left;
@@ -570,12 +585,25 @@ nav {
     }
 
     .tildelinger-section .slider-wrapper {
+        width: 100%;
         margin: 0 0 30px;
     }
 
     .tildelinger-section .swiper-slide-button {
         display: none;
     }
+
+    .swiper-slide {
+        width: 100vw !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .swiper-wrapper {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        }
 }
 
 

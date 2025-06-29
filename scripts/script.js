@@ -18,8 +18,8 @@ window.addEventListener('scroll', function () {
 const swiper = new Swiper('.slider-wrapper', {
     loop: false,
     grabCursor: true,
-    spaceBetween: 105,
-    centeredSlides: true,
+    spaceBetween: 0,
+    centeredSlides: false,
 
     // If we need pagination
     pagination: {
