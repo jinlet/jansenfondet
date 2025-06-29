@@ -147,6 +147,7 @@ nav {
     transition: all 0.3s ease;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     font-weight: 600;
+    border-color: rgba(156, 113, 56, 0.2); /* Black with 70% opacity */;
 }
 
 .button:hover {
@@ -263,13 +264,13 @@ nav {
     }
 
     .home-text h1 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
         letter-spacing: 2px;
         text-align: center;
     }
 
     .home-text p {
-        font-size: 1.15rem;
+        font-size: 1rem;
         margin: 20px 0;
         text-align: left;
         line-height: 1.2;
@@ -348,7 +349,7 @@ nav {
 }
 
 .criteria-box {
-    background: #dda53b2f;
+    background: rgba(255, 255, 255, 0.184);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 800px;
@@ -356,32 +357,13 @@ nav {
 }
 
 .deadline-info {
-    background: #dda53b2f;
+    background: #ffffff2f;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     border-radius: 10px;
     margin-top: 3rem;
     font-size: 18px;
-}
-
-/*MER INFORMASJONSSIDE*/
-.info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #dda53b2f;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.info h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 300;
 }
 
 .criteria-list {
@@ -435,6 +417,32 @@ nav {
     border-radius: 18px;
 }
 
+@media (max-width: 900px) {
+    .soknadskriterier {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .soknadskriterier h2 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+    .soknadskriterier p {
+        font-size: 1rem;
+        margin: 20px 20px;
+    }
+    .deadline-info {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .deadline-info p {
+        min-width: auto;
+        white-space: normal;
+    }
+}
+
 /*CONTACT*/
 .contact {
     height: 20vh;
@@ -479,84 +487,97 @@ nav {
 
 
 /*TILDELINGER*/
-.tildelinger {
-    padding: 100px 0px;
+
+.tildelinger-section {
+    padding: 100px 0 100px;
     text-align: center;
 }
 
-.tildelinger h1 {
+.tildelinger-section h2 {
     font-size: 3.5rem;
-    margin-bottom: 40px;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
 }
 
-.tildelinger-container {
+.tildelinger-section .tildelinger {
     display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 20px;
-    padding-bottom: 50px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: -50px;
 }
 
-.tildelinger-image {
-    flex: 1;
-    max-width: 30%;
-    height: auto;
-    border-radius: 8px;
-    margin-right: 50px;
-    align-self: center;
+.tildelinger-section .tildelinger .tildeling-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    margin-bottom: 50px;
 }
 
-.tildelinger-text {
-    flex: 2;
-    line-height: 1.6;
-    width: 100%;
+.tildelinger-section .tildelinger .name {
+    margin-bottom: 16px;
+    font-size: 1.4rem;
 }
 
-.tildelinger-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 100;
-    letter-spacing: 3px;
+.tildelinger-section .tildeling-info {
+    line-height: 25px;
+    max-width: 900px;
+    padding: 0 20px 0 20px;
+}
+
+.tildelinger-section .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    background: #3a7444;
+}
+
+.tildelinger-section .swiper-slide-button {
+    margin-top: -50px;
+    color: #3a7444;
+    transition: 0.3s ease;
+}
+
+.tildelinger-section .swiper-slide-button:hover {
+    color: #223625;
+}
+
+@media (max-width: 900px) {
+    .tildelinger-section {
+        padding: 60px 0;
+    }
+
+    .tildelinger-section h2 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .tildelinger-section .tildelinger {
+        padding: 25px 15px;
+        max-width: 100%;
+    }
+    .tildelinger-section .testimonial .user-image {
+        width: 200px;
+        height: 200px;
+    }
+    .tildeling-info {
+    font-size: 1rem;
+    line-height: 1.5;
     text-align: left;
+    }
+
+    .tildeling-info a {
+        font-size: 1rem;
+    }
+
+    .tildelinger-section .slider-wrapper {
+        margin: 0 0 30px;
+    }
+
+    .tildelinger-section .swiper-slide-button {
+        display: none;
+    }
 }
 
-.tildelinger-text p {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    text-align:left
-}
-
-.tildelinger-text a {
-    color: #5C5753;
-    text-decoration: none;
-    font-weight: bold;
-}
-.tildelinger-text a:hover {
-    text-decoration: underline;
-}
-
-.reverse .tildelinger-image{
-    margin-left: 50px;
-    margin-right: 0;
-}
-
-.reverse .tildelinger-text {
-    text-align: right;
-}
-
-.reverse .odd {
-    text-align: left;
-}
-
-.reverse .even {
-    text-align: right;
-    margin-left: 150px;
-    margin-right: 50px;
-}
 
 /*RESPONSIVE FOR TABLET AND MOBILE*/
 /* Responsive for Header */

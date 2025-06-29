@@ -6,6 +6,7 @@
     <title>Jansenfondet</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="icon" href="images/logo.png" type="image/x-icon">
 </head>
 <body>
@@ -81,12 +82,47 @@
             </div>
         </div>
         <div class="deadline-info">
-            <p><strong>Søknadsfrist:</strong> 1. Juni 2025</p>
-            <p><strong>Utvelgelse kunngjøres:</strong> 1. Juli 2025</p>
+            <p><strong>Søknadsfrist:</strong> 1.&nbsp;Juni&nbsp;2025</p>
+            <p><strong>Utvelgelse kunngjøres:</strong> 1.&nbsp;Juli&nbsp;2025</p>
+        </div>
+    </section>
+
+    <section class="tildelinger-section">
+        <h2 class="tildelinger-text">Tidligere mottagere av Jansenfondet</h2>
+        <div class="tildelinger-content">
+            <div class="slider-container swiper">
+                <div class="slider-wrapper">
+                    <ul class="tildelinger-list swiper-wrapper">
+                        <li class="tildelinger swiper-slide">
+                            <img src="images/lisaklinikken.jpg" alt="Tildeling" class="tildeling-image">
+                            <h3 class="name">Lisaklinikken</h3>
+                            <i class="tildeling-info">Mottaker av Jansenfondet i 2023 er <a href="https://www.dyrebeskyttelsen.no/lisaklinikken/" target="_blank">Lisaklinikken</a>.
+                                Lisaklinikken er Norges første gratis veterinærklinikk for dyr av eiere som av ulike grunner ikke kan betale for veterinærbehandling. Klinikken er oppkalt etter Norges første kvinnelige dyreverner – Lisa Kristoffersen – som stiftet foreningen «Dyrevernelaget» i 1907.
+                                Klinikken ligger i Toftes gate 68a på Grunerløkka i Oslo og tilbyr alt fra alminnelig helsesjekk og kloklipp til tannbehandling og operasjoner.
+                                Bidraget fra Jansenfondet vil bli brukt til å kjøpe inn poliklinisk utstyr til bruk på klinikken.
+                            </i>
+                        </li>
+                        <li class="tildelinger swiper-slide">
+                            <img src="images/lerud-kattepensjonat.jpg" alt="Tildeling" class="tildeling-image">
+                            <h3 class="name">Lerud Kattepensjonat</h3>
+                            <i class="tildeling-info">Mottaker av Jansenfondet i 2024 er <a href="https://www.lerud.no/" target="_blank">Lerud Kattepensjonat</a>.
+                                Lerud Kattepensjonat ligger på Lerud gård i Romedal. Det ble åpnet 6. April 2017 og har fra første dag hatt høyt fokus på kattenes velvære. Stedet er bygget for å dekke katters behov mens eier er bortreist. Kattene får eget romslig bur med stor gulvflate og full takhøyde. Det er også fellesrom, luftegård og TV-krok tilgjengelig for kattene.
+                            Pensjonatet er utstyrt med egen sykeavdeling og samarbeider med flere veterinærer. Takket være den gode kvaliteten som pensjonatet opprettholder har katteeiere fra fjerne strøk som Kristiansand, Trondheim og helt fra Sverige tatt reisen dit for å sørge for at kjæledyrene deres har det så bra som mulig.
+                            Eierne av pensjonatet er mennesker med stort engasjement for dyrevelferd, og er aktivt involvert i kampen om å få forandret Norges nåværende regelverk knyttet opp mot dyrehold i bur. Målet er å øke minstekravet på størrelsen av dyrebur for å sikre bedre dyrehold.
+                            De tildelte midlene til Lerud Kattepensjonat fra Jansenfondet ble brukt til å legge inn nye vannrør i pensjonatet.
+                            </i>
+                        </li>
+                    </ul>
+
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
         </div>
     </section>
     
-    <section class="tildelinger" id="tidligere-mottagere">
+    <!-- <section class="tildelinger" id="tidligere-mottagere">
         <h1>Tidligere mottagere av Jansenfondet</h1>
         <div class="tildelinger-container">
             <img src="images/lerud-kattepensjonat.jpg" alt="Lerud Kattepensjonat Image" class="tildelinger-image">
@@ -100,7 +136,6 @@
             </div>
         </div>
         
-        <!-- Reverse -->
         <div class="tildelinger-container reverse">
             <div class="tildelinger-text">
                 <h2>Lisaklinikken</h2>
@@ -111,11 +146,9 @@
             </div>
             <img src="images/lisaklinikken.jpg" alt="Lisaklinikken Image" class="tildelinger-image">
         </div>
-    </section>
+    </section> -->
 
     <div id="contact-section-placeholder"></div>
-
-    <script src="scripts/script.js"></script>
 
     <script>
     const hamburger = document.getElementById("hamburger");
@@ -150,6 +183,9 @@
         }
     });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 <script>
